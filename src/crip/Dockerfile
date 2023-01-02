@@ -2,7 +2,7 @@ FROM tensorflow/tensorflow:2.7.1-gpu
 
 ENV RES101_ZIP_FILE_ID 1WjBgfOUqp4sdRd9BHs4TkdH2EcBtV5ri
 
-RUN pip install --upgrade pip setuptools Cython opencv-python
+RUN pip install --upgrade pip setuptools Cython opencv-python tqdm
 
 RUN apt-key del 7fa2af80
 RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub

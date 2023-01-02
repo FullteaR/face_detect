@@ -1,0 +1,29 @@
+version: '2.3'
+services:
+        edit:
+               build:
+                       context: .
+                       dockerfile: ./src/edit/Dockerfile
+               image: face/edit
+               container_name: edit
+               ports:
+                       - 127.0.0.1:11112:8888
+               volumes:
+                       - ./input:/input
+                       - ./output:/output
+                       - ./src/edit/src:/mnt
+
+        crip:
+                build:
+                        context: .
+                        dockerfile: ./src/crip/Dockerfile
+                image: icon/crip
+                container_name: crip
+                volumes:
+                        - ./input:/input
+                        - ./output:/output
+                #runtime: nvidia
+                environment:
+                        - NVIDIA_VISIBLE_DEVICES=all
+                        - NVIDIA_DRIVER_CAPABILITIES=all
+

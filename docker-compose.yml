@@ -17,7 +17,7 @@ services:
                 build:
                         context: .
                         dockerfile: ./src/crip/Dockerfile
-                image: icon/crip
+                image: face/crip
                 container_name: crip
                 volumes:
                         - ./input:/input
